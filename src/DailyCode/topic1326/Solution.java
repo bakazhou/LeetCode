@@ -20,11 +20,10 @@ class Solution {
         while (!map.isEmpty() && right != n) {
             int l = map.firstKey();
             int r = map.get(map.firstKey());
-            System.out.println(l);
-            System.out.println(r);
             if (l > right) {
                 return -1;
             }
+            //选择能扩张的线段中 右端点最远的线段
             while (!map.isEmpty() && map.firstKey() <= right) {
                 r = Math.max(r, map.get(map.firstKey()));
                 map.remove(map.firstKey());
